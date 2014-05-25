@@ -18,4 +18,6 @@ if [ $? -ne 0 ]
 then
   cat /vagrant/openstack_rsa.pub >> /root/.ssh/authorized_keys
 fi
-packstack --allinone
+# packstack --allinone --provision-all-in-one-ovs-bridge=n
+#packstack --answer-file /vagrant/answer.txt
+packstack --allinone --provision-all-in-one-ovs-bridge=n

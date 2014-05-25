@@ -7,13 +7,13 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "centos65"
   config.vm.hostname = "openstack.example.com"
+  config.vm.network "private_network", ip: "192.168.122.10"
 
   # config.vm.network "private_network", ip: "192.168.33.10"
 
   # config.vm.network "public_network"
   #
 
-  config.vm.provision "shell", path: "openstack.sh"
   config.vm.provider "vmware_fusion" do |v|
     # Give enough memory
     v.vmx["memsize"] = "4096"
@@ -22,4 +22,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Make sure nested virtualization is enabled
     v.vmx["vhv.enable"] = "4"
   end
+  config.vm.provision "shell", path: "openstack.sh"
 end
