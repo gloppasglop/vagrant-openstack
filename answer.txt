@@ -454,7 +454,7 @@ CONFIG_PROVISION_TEMPEST_REPO_REVISION=stable/havana
 
 # Whether to configure the ovs external bridge in an all-in-one
 # deployment
-CONFIG_PROVISION_ALL_IN_ONE_OVS_BRIDGE=n
+CONFIG_PROVISION_ALL_IN_ONE_OVS_BRIDGE=y
 
 # The IP address of the server on which to install Heat service
 CONFIG_HEAT_HOST=192.168.122.10
